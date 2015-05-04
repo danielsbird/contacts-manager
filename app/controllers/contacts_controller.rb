@@ -1,15 +1,19 @@
 class ContactsController < ApplicationController
     before_action :logged_in_user
-    before_action :correct_user
+    before_action :correct_user, only: [:show, :destroy]
 
-  def show
-    @contact = Contact.find(params[:id])
-  end
+    def new
+        @contact = Contact.new
+    end
 
-  def destroy
-    @contact = Contact.find(params[:id]).destroy
-    redirect_to user_path(@contact.user)
-  end
+    def show
+        @contact = Contact.find(params[:id])
+    end
+
+    def destroy
+        @contact = Contact.find(params[:id]).destroy
+        redirect_to user_path(@contact.user)
+    end
 
    def logged_in_user
         unless logged_in?
