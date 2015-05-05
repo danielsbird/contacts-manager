@@ -1,5 +1,6 @@
 <div class="row">
     <div class="col-sm-4">
+
         <%= form_for(@contact) do |f| %>
 
             <%= f.label :first_name %>
@@ -14,7 +15,7 @@
             <%= f.label :phone_number %>
             <%= f.text_field :phone_number, class: "form-control" %>
 
-            <%= f.submit "Save", class: "btn btn-primary" %>
+            <%= f.submit "Save", class: "btn btn-primary form-button" %>
         <% end %>
     </div>
 </div>

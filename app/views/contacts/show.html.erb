@@ -14,8 +14,9 @@
         <p>
             <%= @contact.phone_number %>
         </p>
-    </div>
-    <div class="media-right">
-        <%= link_to "Delete", @contact, method: :delete, data: { confirm: "Are you sure?" } %>
+        <p>
+            <%= link_to "Edit", edit_contact_path(@contact) %>
+            <%= link_to "Delete", @contact, method: :delete, data: { confirm: "Are you sure?" } %>
+        </p>
     </div>
 </div>
