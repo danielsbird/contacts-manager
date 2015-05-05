@@ -28,7 +28,7 @@ class ContactsController < ApplicationController
 
         def logged_in_user
             unless logged_in?
-                redirect_to root_url
+                redirect_to login_path
             end
         end
 

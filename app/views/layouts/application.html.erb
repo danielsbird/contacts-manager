@@ -7,8 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <%= link_to "Contacts Manager", root_url, class: "navbar-brand" %>
+                <%= render 'layouts/login'%>
+            </div>
+        </nav>
+            <div class="row">
+                <%= yield %>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
