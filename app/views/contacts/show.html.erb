@@ -1,5 +1,15 @@
-<h1>Contacts#show</h1>
-<p>Find me in app/views/contacts/show.html.erb</p>
+<div>
+    <%= gravatar_for @contact %>
+</div>
+<p>
+    <%= @contact.first_name %> <%= @contact.last_name %>
+</p>
+<p>
+    <%= @contact.email %>
+</p>
+<p>
+    <%= @contact.phone_number %>
+</p>
 <p>
     <%= link_to "Delete", @contact, method: :delete, data: { confirm: "Are you sure?" } %>
 </p>

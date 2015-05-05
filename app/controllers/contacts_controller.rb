@@ -10,20 +10,35 @@ class ContactsController < ApplicationController
         @contact = Contact.find(params[:id])
     end
 
+    def create
+        @contact = current_user.contact.build(contact_params)
+        if @contact.save
+            redirect_to user_path(@contact.user)
+        else
+            redirect_to user_path(@contact.user)
+        end
+    end
+
     def destroy
         @contact = Contact.find(params[:id]).destroy
         redirect_to user_path(@contact.user)
     end
 
-   def logged_in_user
-        unless logged_in?
-            redirect_to root_url
-        end
-    end
+    private
 
-    def correct_user
-        @contact = Contact.find(params[:id])
-        @user = @contact.user
-        redirect_to(root_url) unless current_user?(@user)
-    end
+        def logged_in_user
+            unless logged_in?
+                redirect_to root_url
+            end
+        end
+
+        def correct_user
+            @contact = Contact.find(params[:id])
+            @user = @contact.user
+            redirect_to(root_url) unless current_user?(@user)
+        end
+
+        def contact_params
+            params.require(:contact).permit(:first_name, :last_name, :email, :phone_number)
+        end
 end
