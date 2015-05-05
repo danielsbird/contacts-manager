@@ -1,8 +1,20 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.contact-list-text {
+    margin-left: 10px;
+}
+
+#gravatar {
+    margin-bottom: 10px;
+}
+
 header {
     background-color: #F0F0F5;
     padding-left: 10px;
     padding-right: 10px;
+}
+
+#page-content {
+    margin-left: 5px;
 }

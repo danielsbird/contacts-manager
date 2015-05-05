@@ -1,15 +1,21 @@
-<div>
-    <%= gravatar_for @contact %>
+<div class="media">
+    <div class="media-left">
+        <div id="gravatar">
+            <%= gravatar_for @contact %>
+        </div>
+    </div>
+    <div class="media-body">
+        <p>
+            <%= @contact.last_name %>, <%= @contact.first_name %>
+        </p>
+        <p>
+            <%= @contact.email %>
+        </p>
+        <p>
+            <%= @contact.phone_number %>
+        </p>
+    </div>
+    <div class="media-right">
+        <%= link_to "Delete", @contact, method: :delete, data: { confirm: "Are you sure?" } %>
+    </div>
 </div>
-<p>
-    <%= @contact.first_name %> <%= @contact.last_name %>
-</p>
-<p>
-    <%= @contact.email %>
-</p>
-<p>
-    <%= @contact.phone_number %>
-</p>
-<p>
-    <%= link_to "Delete", @contact, method: :delete, data: { confirm: "Are you sure?" } %>
-</p>
