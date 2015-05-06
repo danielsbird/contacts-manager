@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
     attr_accessor :remember_token
     has_secure_password
-    has_many :contact
+    has_many :contacts
 
     # Returns the hash digest of a given string
     def User.digest(string)
