@@ -1,5 +1,11 @@
 <% if logged_in? %>
-    <%= link_to "Log out", logout_path, method: :delete %>
+    <%= link_to(logout_path, :method => :delete) do %>
+        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+        Log out
+    <% end %>
 <% else %>
-    <%= link_to "Log in", login_path %>
+    <%= link_to(login_path) do %>
+        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+        Log in
+    <% end %>
 <% end %>
