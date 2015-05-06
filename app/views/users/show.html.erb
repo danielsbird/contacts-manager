@@ -1,6 +1,11 @@
-<p>
-    <%= link_to "New contact", new_contact_path, class: "btn btn-default" %>
-</p>
+<span class="h2">
+    Contacts
+    <%= link_to(new_contact_path, class: "btn btn-default new-contact-button") do %>
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        Add new contact
+    <% end %>
+</span>
+
 <table class="table table-hover">
     <thead>
         <tr>
