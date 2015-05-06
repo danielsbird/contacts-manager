@@ -1,17 +1,20 @@
-<div class="media">
-    <div class="media-left">
+<div class="media" id="contact-card">
+    <div class="media-left" id="contact-gravatar">
         <div id="gravatar">
             <%= gravatar_for @contact %>
         </div>
     </div>
     <div class="media-body">
         <p>
+            <strong>Name:</strong>
             <%= @contact.last_name %>, <%= @contact.first_name %>
         </p>
         <p>
+            <strong>Email:</strong>
             <%= @contact.email %>
         </p>
         <p>
+            <strong>Phone Number:</strong>
             <%= @contact.phone_number %>
         </p>
         <p>

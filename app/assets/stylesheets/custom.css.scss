@@ -1,12 +1,16 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+#contact-card {
+    margin-top: 50px;
+}
+
 .contact-list-text {
     margin-left: 10px;
 }
 
-.contact-panel:hover {
-    background-color: #F0F0F5;
+#contact-gravatar {
+    padding-right: 25px;
 }
 
 .form-button {
